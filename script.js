@@ -8,11 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    document.getElementById('searchButton').addEventListener('click', searchProduct);
+
+
     function updateInventory() {
         inventoryList.innerHTML = '';
         inventory.forEach(product => {
             const row = document.createElement('tr');
+
             row.style.backgroundColor = "white";
+            row.style.backgroundColor = "rgb(176, 173, 173)";
 
             const productIdCell = document.createElement('td');
             productIdCell.textContent = product.id;
@@ -115,7 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
         cartList.innerHTML = '';
         cart.forEach(product => {
             const row = document.createElement('tr');
+
             row.style.backgroundColor = "white";
+            row.style.backgroundColor = "rgb(176, 173, 173)";
             
             const productIdCell = document.createElement('td');
             productIdCell.textContent = product.id;
